@@ -32,10 +32,38 @@ public class Main {
 			double sum = 0;
 			for (int i = 0; i < n; i++) {
 				sum += grades[i];
-			}					
+			}
+			
+			int minStudent = 0;
+			double min = 10;
+			
+			for (int i = 0; i < n; i++) {
+				if(grades[i] < min) {
+					min = grades[i];
+					minStudent = i;
+				}
+			}
+			
+			int maxStudent = 0;		
+			double max = 0;
+			
+			for (int i = 0; i < n; i++) {				
+				if(grades[i] > min) {
+					max = grades[i];
+					maxStudent = i;
+				}
+			}		
 
 			double average = sum / n;
-			System.out.println("Average is: " + average);
+			
+			System.out.println();
+			System.out.println("You have " + n + " students.");
+			System.out.println();
+			System.out.println("Student with minimum grade is " + names[minStudent] + " " + surnames[minStudent] + " and minimum grade is: " + min);
+			System.out.println();
+			System.out.println("Student with maximum grade is " + names[maxStudent] + " " + surnames[maxStudent] + " and maximum grade is: " + max);
+			System.out.println();
+			System.out.println("Average grade of all students is: " + average);
 		}
 	}
 }
