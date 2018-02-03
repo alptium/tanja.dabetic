@@ -1,4 +1,4 @@
-package tanjadab;
+package tanjadab.calculator;
 
 import java.util.Scanner;
 
