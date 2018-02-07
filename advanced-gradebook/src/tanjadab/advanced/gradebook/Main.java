@@ -15,13 +15,13 @@ public class Main {
 			double[] grades = new double[n];
 			
 			for (int i = 0; i < n; i++) {
-				System.out.println("Enter name of student " + (i+1) + ":");
+				System.out.println("Enter name of student " + (i + 1) + ":");
 				names[i] = sc.next();
 
-				System.out.println("Enter surname of student " + (i+1) + ":");
+				System.out.println("Enter surname of student " + (i + 1) + ":");
 				surnames[i] = sc.next();
 
-				System.out.println("Enter grade of student " + (i+1) + ":");
+				System.out.println("Enter grade of student " + (i + 1) + ":");
 				grades[i] = sc.nextDouble();
 			}
 
@@ -34,8 +34,18 @@ public class Main {
 				sum += grades[i];
 			}
 			
+			int maxStudent = 0;		
+			double max = 0;
+			
+			for (int i = 0; i < n; i++) {				
+				if(grades[i] > max) {
+					max = grades[i];
+					maxStudent = i;
+				}
+			}
+			
 			int minStudent = 0;
-			double min = 10;
+			double min = max;
 			
 			for (int i = 0; i < n; i++) {
 				if(grades[i] < min) {
@@ -44,16 +54,6 @@ public class Main {
 				}
 			}
 			
-			int maxStudent = 0;		
-			double max = 0;
-			
-			for (int i = 0; i < n; i++) {				
-				if(grades[i] > min) {
-					max = grades[i];
-					maxStudent = i;
-				}
-			}		
-
 			double average = sum / n;
 			
 			System.out.println();
